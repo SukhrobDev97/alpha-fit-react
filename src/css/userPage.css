@@ -1,0 +1,449 @@
+.user-page {
+	width: 100%;
+	height: auto;
+	display: flex;
+	background: #f8f8ff;
+}
+
+.user-page .css-heg063-MuiTabs-flexContainer {
+	flex-direction: column;
+}
+
+.user-page .css-mn3ro6-MuiTabs-indicator {
+	height: 0px;
+	width: 0px;
+}
+
+.user-page .css-1ujnqem-MuiTabs-root {
+	width: 100%;
+}
+
+.user-page .my-page-frame {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	padding: 50px 0 50px 0;
+}
+
+.my-page-frame .my-page-left {
+	width: 70%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.my-page-left .menu-name {
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	border-bottom: 1px solid #f8f8ff;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 45px;
+	color: #f8f8ff;
+}
+
+.my-page-left .menu-content {
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.my-page-left .write-content {
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-page .menu-content .post-content {
+	margin-top: 10px;
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.my-page-frame .my-page-right {
+	margin-left: 30px;
+	width: 30%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-page .order-info-box {   /* MEMBER-PAGE (USER-INFO-BOX) */
+  position: relative;
+  width: 100%;
+  padding: 30px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(135deg, #f6f2ff, #e9e6fc);
+  box-shadow: 0 10px 30px rgba(78, 84, 200, 0.15);
+  border-radius: 20px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.user-page .order-info-box:hover {
+  box-shadow: 0 20px 40px rgba(200, 203, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+
+.user-page .order-info-box .settings-btn {
+	position: absolute;
+	top: 6%;
+	right: 19%;
+	cursor: pointer;
+}
+
+.user-page .order-info-box .order-user-img {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.user-page .order-info-box .order-user-img .order-user-avatar {
+	width: 150px;
+	height: 150px;
+	filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+	border-radius: 37px;
+}
+
+.user-page .order-info-box .order-user-icon-box {
+  position: absolute;
+  top: 80%;
+  right: 8px;
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  background: rgba(78, 84, 200, 0.15); /* primary rangning yengil versiyasi */
+  backdrop-filter: blur(8px); /* zamonaviy blur effekti */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(78, 84, 200, 0.2);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.user-page .order-info-box .order-user-icon-box:hover {
+  background: rgba(78, 84, 200, 0.3);
+}
+
+
+.user-page .order-info-box .order-user-name {   /* MEMBER-PAGE (USER-NAME */
+  margin-top: 12px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 2rem; /* 32px */
+  line-height: 1.3;
+  color: #1a1a2e;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+}
+
+.user-page .order-info-box .order-user-name:hover {
+  color: #4e54c8;
+  cursor: default;
+}
+
+
+.user-page .order-info-box .order-user-prof {      /* MEMBER-PAGE (USER-INFO */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.5; /* 27px */
+  color: #7a7a8c; /* yumshoq kulrang */
+  letter-spacing: 0.02em;
+  font-style: normal; /* classic style */
+  margin-top: 4px;
+  transition: color 0.3s ease;
+}
+
+.user-page .order-info-box .order-user-prof:hover {
+  color: #4e54c8; /* primary accent rang */
+  cursor: default;
+}
+
+
+.user-page .order-info-box .user-media-box {    /* MEMBER-PAGE (USER-SOCIAL-MEDIA */
+	margin-top: 10px;
+	width: 60%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.user-page .order-info-box .user-desc {          /* MEMBER-PAGE (USER-MOTTO */
+  margin-top: 30px;
+  width: 90%;
+  max-width: 700px;
+  display: flex;
+  justify-content: center;
+  font-family: 'Inter', 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6; /* 25.6px */
+  color: #4b4b5a;
+  text-align: center;
+  padding: 16px 24px;
+  background: #f0f2ff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(78, 84, 200, 0.1);
+  transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.user-page .order-info-box .user-desc:hover {
+  background: #dfe4ff;
+  color: #3a3f9a;
+  box-shadow: 0 12px 28px rgba(78, 84, 200, 0.25);
+}
+
+
+.user-page .order-info-box .css-1e3kzd4-MuiButtonBase-root-MuiButton-root {
+	margin-top: 15px;
+	min-width: 90%;
+	height: 44px;
+	text-transform: capitalize;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 38px;
+	color: #f8f8ff;
+}
+
+.user-page .menu-box img {
+	width: 25px;
+}
+
+.user-page .menu-box span {
+	margin-left: 30px;
+	font-family: 'Poppins';
+	font-style: normal;
+	font-weight: 600;
+	font-size: 25px;
+	line-height: 38px;
+	color: #000000;
+}
+
+.user-page .settings {
+	width: 95%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-page .settings .input-frame {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.user-page .settings .short-input {
+	width: 49%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.user-page .settings .long-input {
+	width: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+.user-page .settings .spec-label {
+	font-family: 'Source Serif Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 25px;
+	color: #f8f8ff;
+}
+
+.user-page .settings .spec-input {
+	position: relative;
+	margin-top: 10px;
+	padding-left: 20px;
+	width: 100%;
+	height: 54px;
+	border: none;
+	background: #f7f7f7;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	font-family: 'GT Walsheim Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 26px;
+	color: #4f547b;
+}
+
+.user-page .settings .spec-textarea {
+	position: relative;
+	margin-top: 10px;
+	padding: 20px;
+	width: 100%;
+	height: 200px;
+	border: none;
+	background: #f7f7f7;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 5px;
+	font-family: 'GT Walsheim Pro';
+	font-style: normal;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 26px;
+	color: #4f547b;
+}
+
+.user-page .settings .member-media-frame {     /* MEMBER-PAGE (upload image box */
+  margin-top: 32px;
+  position: relative;
+  padding: 20px 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* elementlar orasida masofa */
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.user-page .settings .member-media-frame:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+
+.user-page .settings .member-media-frame {
+  margin-top: 32px;
+  position: relative;
+  padding: 20px 24px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffffff, #f5f7fa);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.user-page .settings .member-media-frame:hover {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.user-page .settings .member-media-frame .mb-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #e0e0e0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.user-page .settings .member-media-frame .mb-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.user-page .settings .media_change-box {
+  position: relative;
+  margin-left: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 0;
+  width: auto;
+  height: 100%;
+}
+
+.user-page .settings .media-change-box span {
+  font-family: 'GT Walsheim Pro', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #140342;
+}
+
+.user-page .settings .media-change-box p {
+  margin: 6px 0 14px 0;
+  font-family: 'GT Walsheim Pro', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #4f547b;
+}
+
+.user-page .settings .up-del-box {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  background: #e2e2e2;
+  border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.user-page .settings .up-del-box:hover {
+  background: #c5c5c5;
+}
+
+.user-page .settings .up-del-box input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.user-page .settings .save-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 32px;
+}
+
+.user-page .settings .save-box button {
+  padding: 12px 24px;
+  background: #121212; /* qora fon */
+  color: #FFD700; /* oltin rang matn */
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
+}
+
+.user-page .settings .save-box button:hover {
+  transform: translateY(-2px);
+  background: #2ecc71; /* yashil fon (masalan, #2ecc71) */
+  color: #145214; /* to‘q yashil matn */
+}
+
+
+

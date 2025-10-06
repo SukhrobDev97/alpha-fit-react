@@ -1,0 +1,462 @@
+.order-page {
+  width: 100%;
+  height: auto;
+  background: #f8f8ff;
+  display: flex;
+}
+
+.order-page .order-container {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: row;
+}
+
+.order-page .order-left {
+  width: 860px;
+  height: auto;
+}
+
+.order-page .order-right {
+  width: 360px;
+  height: auto;
+  margin-top: 86px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.order-page .order-right .order-info-box {           /* USER-INFO-BOX */
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f0f4ff, #ffffff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.order-page .order-right .order-info-box:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+
+.order-page .order-right .order-info-box2 {         /* CARD-INPUT-BOX */
+  width: 100%;
+  max-width: 400px;
+  padding: 24px;
+  background: linear-gradient(135deg, #f0f5ff, #ffffff);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 16px;
+  transition: all 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.order-page .order-right .order-info-box2:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.order-page .order-right .order-info-box .member-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-page .order-right .order-info-box .liner {
+  width: 100%;
+  border: 1px solid #a1a1a1;
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+.order-page .order-info-box .order-user-img {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-page .order-info-box .order-user-img .order-user-avatar {
+    width: 117px;
+    height: 112px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 37px;
+}
+
+.order-page .order-info-box .order-user-icon-box {
+    position: absolute;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    top: 81%;
+    right: 0;
+    display: flex;
+    background: rgba(0, 0, 0, 0.33);
+    border-radius: 37px;
+}
+
+.order-page .order-user-icon-box .order-user-prof-img {
+    filter: brightness(0) invert(1);
+}
+
+.order-page .order-info-box .order-card-info {
+  margin-top: 30px; /* Yangi qator */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.order-page .order-info-box .order-user-name {
+    margin-top: 10px;
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 36px;
+    color: #08090d;
+}
+
+.order-page .order-info-box .order-user-prof {
+    font-family: 'Sommissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 36px;
+    color: #a1a1a1;
+}
+
+.order-page .order-info-box .order-user-address {
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.order-page .order-info-box .spec-address-txt {
+    margin-left: 5px;
+    font-family: 'DMs Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #616164;
+}
+
+.order-page .card-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    border: 0.5px solid #b3a6a6;
+    letter-spacing: -0.02em;
+    color: #434141;
+}
+
+.order-page .order-info-box2 .cards-box {
+    margin-top: 3px;
+    width: 100%;
+    gap: 4%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.order-page .card-half-input {
+    margin-top: 10px;
+    padding: 10px;
+    width: 48%;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    font-family: 'Nunito';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    border: 0.5px solid #b3a6a6;
+    letter-spacing: -0.02em;
+    color: #434141;
+    gap: 3px;
+}
+
+.order-page .order-info-box2 .cards-img {
+    margin-top: 70px;
+    margin-bottom: 15px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.order-page .order-info-box2 .cards-img .cards-sty {
+    width: 60px;
+    height: 40px;
+}
+
+.order-page .order-info-box .css-wca78v-MuiButtonBase-root-MuiButton-root {
+    min-width: 160px;
+}
+
+.order-page .order-left .order-nav-frame {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-bottom: 1px solid #f8f8ff;
+}
+
+.order-page .order-left .order-nav-frame .table-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.order-page .css-1gsv261 {
+    width: 75%;
+}
+
+.order-page .css-heg063-MuiTabs-flexContainer {
+    justify-content: space-between;
+}
+
+.order-page .order-main-content {
+    width: 855px;
+    height: auto;
+    
+}
+
+.order-page .css-19kzrtu {
+    padding-top: 24px;
+}
+
+.order-page .order-main-content .order-main-box {        /* PAUSED-ORDERS-BOX */
+  position: relative;
+  width: 100%;
+  max-height: 285px;
+  margin-bottom: 25px;
+  background: linear-gradient(135deg, #f5f9ff, #ffffff);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.order-page .order-main-content .order-main-box:hover {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+
+.order-page .order-main-content .order-main-box .order-box-scroll {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 105px;
+    max-height: 205px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    overflow-y: scroll;
+}
+
+.order-page .order-main-content .order-main-box .order-box-scroll::-webkit-scrollbar {
+    width: 7px;
+}
+
+.order-page .order-main-content .order-main-box .order-box-scroll::-webkit-scrollbar-thumb {
+    background-color: #8989db;
+    border-radius: 5px;
+}
+
+.order-page .order-box-scroll .orders-name-price {
+    position: relative;
+    height: 47px;
+    margin-top: 5px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.order-page .order-box-scroll .orders-name-price .order-dish-img {
+    position: relative;
+    width: 50px;
+    height: 47px;
+    border-radius: 29px;
+    background-size: cover;
+} 
+
+.order-page .order-box-scroll .orders-name-price .title-dish {
+    position: relative;
+    width: 260px;
+    height: 36px;
+    margin-left: 20px;
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 36px;
+    color: #000000;
+}
+
+.order-page .order-box-scroll .orders-name-price .price-box {
+    position: relative;
+    max-width: 170px;
+    height: 100%;
+    margin-left: 150px;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.order-page .order-box-scroll .orders-name-price .price-box p {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    color: #262626;
+}
+
+.order-page .order-main-content .orders-main-box .total-price-box {
+    position: relative;
+    width: 100%;
+    height: 41px;
+    margin-top: 40px;
+    margin: 7px 0px 7px 0px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+} 
+
+.order-page .order-main-content .total-price-box .box-total .verify-button {
+  background: linear-gradient(135deg, #2c2c2e, #1f1f20);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+.order-page .order-main-content .total-price-box .box-total .verify-button:hover {
+  background: linear-gradient(135deg, #3a3a3d, #2a2a2c);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.order-page .order-main-content .total-price-box .box-total .verify-button:active {
+  transform: scale(0.96);
+}
+
+
+.order-page .order-main-content .total-price-box .verify-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-25deg);
+  transition: left 0.5s ease;
+}
+
+.order-page .order-main-content .total-price-box .verify-button:hover::before {
+  left: 130%;
+}
+
+.order-page .order-main-content .total-price-box .verify-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+
+.order-page .order-main-content .total-price-box .verify-button {  /* Process Orders */
+  background: linear-gradient(145deg, #f3e58d, #dfc952);
+  color: #333;
+  border: none;
+  border-radius: 16px;
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.15),
+    inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.order-page .order-main-content .total-price-box .verify-button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.2),
+    inset 0 1px 3px rgba(255, 255, 255, 0.6);
+}
+
+
+
+.order-page .order-main-content .order-main-box .total-price-box .box-total {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.order-page .total-price-box .box-total p {
+  font-family: 'Commissioner';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  color: #000000;
+}
+
+.order-page .total-price-box .box-total .data-compl {
+  font-family: 'Commissioner';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 36px;
+  color: #000000;
+}
