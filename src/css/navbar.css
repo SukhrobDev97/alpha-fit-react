@@ -1,14 +1,31 @@
-.home-navbar{
-    width: 100%;
-    height: 773px;
-    display: flex;
-    background: url("/public/img/banner.webp");
-    background-size: cover;
+.home-navbar {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  background: url("/public/img/banner.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+
+.home-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); 
+  z-index: 1;
 }
 
 .home-navbar .navbar-container{
-    margin-top: 55px;
-    height: 642px;
+  position: relative;
+  z-index: 2; /* overlay ustiga chiqish uchun */
+  margin-top: 55px;
+  height: 642px;
 }
 
 .home-navbar .navbar-container .menu{
@@ -20,16 +37,24 @@ align-items: center;
 }
 
 .home-navbar .navbar-container .menu .brand-logo{
-    width: 125px;
-    height: 30px;
+    width: 225px;
+    height: 130px;
 }
 
 .home-navbar .navbar-container .menu .links{
     min-width: 700px;
+  
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.home-navbar .navbar-container .menu .links a {
+  font-size: 20px;      
+  font-weight: 500;     
+  letter-spacing: 0.5px; 
+  color: #f8f8ff;       
 }
 
 .home-navbar .navbar-container .menu .links .login-button{
@@ -144,38 +169,33 @@ align-items: center;
     color: #f8f8ff;
 }
 
-.home-navbar .navbar-container .logo-frame{
-    margin-top: 43px;
-    width: 690px;
-    height: 419px;
-}
-
-.home-navbar .navbar-container .logo-frame{
-    width: 100%;
-    height: 100%;
-    background: url("/public/img/logo.webp");
-
-    background-size: contain;
-    background-repeat: no-repeat;
-    filter: invert(25%);
-}
-
-
-
-
-
-
-
 .other-navbar{
-    width: 100%;
-    height: 400px;
-    display: flex;
-    background: url("/public/img/banner.webp");
-    background-size: cover;
+  position: relative;
+  width: 100%;
+  height: 600px;
+  display: flex;
+  background: url("/public/img/orders.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
+
+.other-navbar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* ← qoramtir qatlam (0.3–0.6 orasida sozlasa bo‘ladi) */
+  z-index: 1;
+}
+
 
 .other-navbar .navbar-container{
-    margin-top: 55px;
+  position: relative;
+  z-index: 2; /* overlay ustiga chiqish uchun */
+  margin-top: 55px;
 }
 
 .other-navbar .navbar-container .menu{
@@ -187,16 +207,24 @@ align-items: center;
 }
 
 .other-navbar .navbar-container .menu .brand-logo{
-    width: 125px;
-    height: 30px;
+  width: 225px;
+  height: 130px;
 }
 
 .other-navbar .navbar-container .menu .links{
     min-width: 700px;
+    height: 100px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+}
+
+.other-navbar .navbar-container .menu .links a {
+  font-size: 20px;       /* avvalgidan kattaroq */
+  font-weight: 500;      /* matnni biroz qalinroq qiladi */
+  letter-spacing: 0.5px; /* biroz oraliq */
+  color: #f8f8ff;        /* oq rang */
 }
 
 .other-navbar .navbar-container .menu .links .login-button{

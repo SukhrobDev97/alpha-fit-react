@@ -43,7 +43,7 @@ export function OtherNavbars (props: OtherNavbarsProps){
                     <NavLink to={"/"}>
                         <img 
                             className="brand-logo"
-                             src="/icons/burak.svg" 
+                             src="/img/logoAlphaFit.png" 
                         />
                     </NavLink>
                 </Box>

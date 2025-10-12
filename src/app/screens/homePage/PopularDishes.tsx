@@ -32,11 +32,12 @@ export default function PopularDishes() {
     <div className="popular-dishes-frame">
       <Container>
         <Stack className="popular-section">
-          <Box className="category-title">Popular Dishes</Box>
+          <Box className="category-title">Top Selling Products</Box>
           <Stack className="cards-frame">
             {popularDishes.length !== 0 ? (
               popularDishes.map((ele: Product) => {
                 const imagePath = `${serverApi}/${ele.productImages[0]}`
+
                 return (
                   <CssVarsProvider key={ele._id}>
                     <Card className="card">
@@ -96,7 +97,7 @@ export default function PopularDishes() {
                 );
               })
             ) : (
-              <Box className="no-data">No Popular Dishes!</Box>
+              <Box className="no-data">No Popular Products!</Box>
             )}
           </Stack>
         </Stack>

@@ -25,8 +25,8 @@ export enum ProductSize {
   // Mahsulot toifalari
   export enum ProductCollection {
     DISH = "DISH",
-    SALAD = "SALAD",
-    DESSERT = "DESERT",  // ❗️Eslatma: aslida bu "DESSERT" emas, noto'g'ri yozilgan "DESERT" -> to'g'risi DESSERT
-    DRINK = "DRINK",
+    DESSERT = "DESSERT",
+    SUPPLEMENT= "SUPPLEMENT",
+    VITAMINS = "VITAMINS",
     OTHER = "OTHER"
   }

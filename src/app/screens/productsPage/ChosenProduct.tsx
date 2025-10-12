@@ -93,16 +93,6 @@ export default function ChosenProduct(props: ChosenProductsProps) {
   }
 )}
 
-            {/* {chosenProduct?.productImages.map(
-              (ele: string, index: number) => {
-                const imagePath = `${serverApi}/${ele}`
-                return (
-                  <SwiperSlide key={index}>
-                    <img className="slider-image" src={imagePath} />
-                  </SwiperSlide>
-                );
-              }
-            )} */}
           </Swiper>
         </Stack>
         <Stack className={"chosen-product-info"}>

@@ -1,7 +1,6 @@
 import { Box, Button, Container, ListItemIcon, Menu, MenuItem, Stack } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import Basket from "./Basket";
-import { useEffect, useState } from "react";
 import { CartItem } from "../../lib/types/search";
 import { useGlobals } from "../../app/hooks/useGlobals";
 import { serverApi } from "../../lib/config";
@@ -45,7 +44,7 @@ export function HomeNavbar (props: HomeNavbarProps){
                     <NavLink to={"/"}>
                         <img 
                             className="brand-logo"
-                             src="/icons/burak.svg" 
+                             src="/img/logoAlphaFit.png" 
                         />
                     </NavLink>
                 </Box>
@@ -143,10 +142,11 @@ export function HomeNavbar (props: HomeNavbarProps){
 </Menu>
                 </Stack>
             </Stack>
+            
             <Stack className="header-frame">
                 <Stack className="detail">
-                    <Box className="head-main-text">World's most delicious cousine</Box>
-                    <Box className="wel-text">The Choice, is not the choice</Box>
+                    <Box className="head-main-text">AlphaFit — Where Strength Begins</Box>
+                    <Box className="wel-text">Power Your Healthy Life Journey</Box>
                     <Box className="service-text">24 hours service</Box>
                     <Box className="signup">
                         {!authMember ? (
@@ -155,7 +155,7 @@ export function HomeNavbar (props: HomeNavbarProps){
                                 className="signup-button"
                                 onClick={() => setSignupOpen(true)}
                             >
-                                SIGN UP
+                                JOIN US
                             </Button>
                         ): null}
                     </Box>

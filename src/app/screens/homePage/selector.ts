@@ -19,5 +19,5 @@ export const retrieveNewDishes = createSelector(
 // Top users uchun selector
 export const retrieveTopUsers = createSelector(
   selectHomePage,
-  (HomePage) => HomePage.topUsers
+  (HomePage) => Array.isArray(HomePage.topUsers) ? HomePage.topUsers : []
 );
