@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { Container } from "@mui/material";
 import Statistics from "./Statistics";
 import PopularDishes from "./PopularDishes";
 import NewDishes from "./NewDishes";
@@ -16,6 +15,7 @@ import ProductService from "../../services/ProductService";
 import { ProductCollection } from "../../../lib/enums/product.enum";
 import MemberService from "../../services/MemberService";
 import { Member } from "../../../lib/types/member";
+import { CartItem } from "../../../lib/types/search";
 
 /** REDUX SLICE & SELECTOR **/
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -24,7 +24,11 @@ const actionDispatch = (dispatch: Dispatch) => ({
   setTopUsers: (data: Member[]) => dispatch(setTopUsers(data))
 });
 
-export function HomePage() {
+interface HomePageProps {
+  onAdd: (item: CartItem) => void;
+}
+
+export function HomePage({ onAdd }: HomePageProps) {
   const {setPopularDishes, setNewDishes, setTopUsers} = actionDispatch(useDispatch())
   // via SELECTOR get DATA from REDUX STORE
 
@@ -65,8 +69,8 @@ export function HomePage() {
 
     return <div className={"homePage"}>
       <Statistics />
-      <PopularDishes />
-      <NewDishes />
+      <PopularDishes onAdd={onAdd} />
+      <NewDishes onAdd={onAdd} />
       <Advertisements />
       <ActiveUsers />
       <Events />

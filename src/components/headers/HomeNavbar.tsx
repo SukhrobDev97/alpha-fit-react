@@ -37,9 +37,11 @@ export function HomeNavbar (props: HomeNavbarProps){
     const {authMember} = useGlobals()
 
 
-    return <div className="home-navbar">
-        <Container className="navbar-container">
-            <Stack className="menu"> 
+    return (
+      <>
+        <Box className="home-nav-sticky">
+          <Container className="home-nav-container">
+            <Stack className="menu">
                 <Box>
                     <NavLink to={"/"}>
                         <img 
@@ -142,28 +144,34 @@ export function HomeNavbar (props: HomeNavbarProps){
 </Menu>
                 </Stack>
             </Stack>
-            
+          </Container>
+        </Box>
+  
+        <div className="home-navbar">
+          <Container className="navbar-container">
             <Stack className="header-frame">
-                <Stack className="detail">
-                    <Box className="head-main-text">AlphaFit — Where Strength Begins</Box>
-                    <Box className="wel-text">Power Your Healthy Life Journey</Box>
-                    <Box className="service-text">24 hours service</Box>
-                    <Box className="signup">
-                        {!authMember ? (
-                            <Button 
-                                variant={"contained"}
-                                className="signup-button"
-                                onClick={() => setSignupOpen(true)}
-                            >
-                                JOIN US
-                            </Button>
-                        ): null}
-                    </Box>
-                </Stack>
-                <Stack className="logo-frame">
-                    <div className="logo-img"></div>
-                </Stack>
+              <Stack className="detail">
+                <Box className="head-main-text">AlphaFit — Where Strength Begins</Box>
+                <Box className="wel-text">Power Your Healthy Life Journey</Box>
+                <Box className="service-text">24 hours service</Box>
+                <Box className="signup">
+                  {!authMember ? (
+                    <Button 
+                        variant={"contained"}
+                        className="signup-button"
+                        onClick={() => setSignupOpen(true)}
+                    >
+                        JOIN US
+                    </Button>
+                ): null}
+                </Box>
+              </Stack>
+              <Stack className="logo-frame">
+                <div className="logo-img"></div>
+              </Stack>
             </Stack>
-        </Container>
-    </div>
+          </Container>
+        </div>
+      </>
+    )
 } 

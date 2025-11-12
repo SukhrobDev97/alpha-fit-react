@@ -50,6 +50,7 @@ function App() {
       await member.logout()
       await sweetTopSuccessAlert("Success", 700)
       setAuthMember(null);
+      onDeleteAll(); // Clear cart on logout
     }catch(err){
       sweetErrorHandling(Messages.error1)
     }
@@ -99,7 +100,7 @@ function App() {
             <HelpPage />
           </Route>
           <Route path="/">
-            <HomePage />
+            <HomePage onAdd={onAdd} />
           </Route>
         </Switch>
         <Footer />

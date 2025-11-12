@@ -7,26 +7,33 @@ import Typography from "@mui/joy/Typography";
 import { CssVarsProvider } from "@mui/joy/styles";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import Divider from "../../../components/divider";
+import IconButton from "@mui/joy/IconButton";
+import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveNewDishes, retrievePopularDishes } from "./selector";
+import { retrieveNewDishes } from "./selector";
 import { Product } from "../../../lib/types/product";
 import { serverApi } from "../../../lib/config";
-import { AppRootState } from "../../../lib/types/screen";
 import { ProductCollection } from "../../../lib/enums/product.enum";
+import { CartItem } from "../../../lib/types/search";
+import { useGlobals } from "../../hooks/useGlobals";
 /** REDUX SLICE & SELECTOR **/
 
 
 const newDishesRetriever = createSelector(
-  retrieveNewDishes, 
-  (newDishes) => ({newDishes})
-)
+  retrieveNewDishes,
+  (newDishes) => ({ newDishes })
+);
 
+interface NewDishesProps {
+  onAdd: (item: CartItem) => void;
+}
 
-export default function NewDishes() {
-      const {newDishes} = useSelector(newDishesRetriever)
+export default function NewDishes({ onAdd }: NewDishesProps) {
+  const { authMember } = useGlobals();
+  const { newDishes } = useSelector(newDishesRetriever);
       
 
   return (
@@ -44,13 +51,45 @@ export default function NewDishes() {
                   product.productVolume + "pcs" : 
                   product.productSize + " size";
 
+                const handleAddToCart = (
+                  event: React.MouseEvent<HTMLButtonElement>
+                ) => {
+                  event.preventDefault();
+                  event.stopPropagation();
+                  if (!authMember) {
+                    window.alert("You are not authenticated, please log in first");
+                    return;
+                  }
+                  onAdd({
+                    _id: product._id,
+                    name: product.productName,
+                    price: product.productPrice,
+                    image: product.productImages[0],
+                    quantity: 1,
+                  });
+                };
+
                   return (
                     <Card key={product._id} variant="outlined" className="card">
-                      <CardOverflow>
+                      <CardOverflow className="product-media">
                         <div className="product-sale">{sizeVolume}</div>
                         <AspectRatio ratio="1">
-                          <img src={imagePath} alt="" />
+                          <img
+                            src={imagePath}
+                            alt={product.productName}
+                            className="product-image"
+                          />
                         </AspectRatio>
+                        <div className="product-hover-overlay">
+                          <IconButton
+                            size="lg"
+                            variant="solid"
+                            className="product-cart-button"
+                            onClick={handleAddToCart}
+                          >
+                            <ShoppingCartIcon />
+                          </IconButton>
+                        </div>
                       </CardOverflow>
 
                       <CardOverflow variant="soft" className="product-detail">

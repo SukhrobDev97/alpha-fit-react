@@ -19,17 +19,25 @@ const finishedOrdersRetriever = createSelector(
 export default function FinishedOrders() {
   const { finishedOrders } = useSelector(finishedOrdersRetriever);
   const [reviewText, setReviewText] = useState<string>("");
-
   const submitReview = async () => {
     if (!reviewText) return alert("Please write a review before submitting.");
-
+  
     try {
-      const lastOrderId = finishedOrders?.[finishedOrders.length - 1]?._id;
-      await axios.post(`${serverApi}/api/orders/review`, {
-        orderId: lastOrderId,
-        text: reviewText,
-      });
-
+      const lastOrder = finishedOrders?.[finishedOrders.length - 1];
+      if (!lastOrder) return;
+  
+      // loop shu yerda bo‘lishi kerak
+      for (const item of lastOrder.orderItems) {
+        const product = lastOrder.productData.find(p => p._id === item.productId);
+        if (!product) continue; // product topilmasa davom et
+        await axios.post(`${serverApi}/orders/review`, {
+          orderId: lastOrder._id,
+          orderItemId: item._id,
+          productId: product._id,
+          text: reviewText,
+        }, { withCredentials: true });
+      }
+  
       setReviewText("");
       alert("Thank you for your feedback!");
     } catch (err) {
@@ -37,6 +45,7 @@ export default function FinishedOrders() {
       alert("Failed to submit review.");
     }
   };
+  
 
   return (
     <TabPanel value={"3"}>
