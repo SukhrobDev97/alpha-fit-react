@@ -46,13 +46,14 @@ function App() {
 
   const handleLogoutRequest = async () => {
     try{
+      handleCloseLogout(); // Close menu first
       const member = new MemberService();
       await member.logout()
       await sweetTopSuccessAlert("Success", 700)
       setAuthMember(null);
       onDeleteAll(); // Clear cart on logout
     }catch(err){
-      sweetErrorHandling(Messages.error1)
+      await sweetErrorHandling(err)
     }
   }
 

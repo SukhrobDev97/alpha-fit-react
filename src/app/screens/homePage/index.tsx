@@ -35,11 +35,12 @@ export function HomePage({ onAdd }: HomePageProps) {
   useEffect(()=>{
     // request DATA from Backend server
     const product = new ProductService();
+    
+    // Top Selling Products - barcha kategoriyalardan eng ko'p ko'rilganlar
     product.getProducts({
       page: 1,
       order: "productViews",
-      limit: 4,
-      productCollection: ProductCollection.DISH
+      limit: 4
     })
     .then((data)=>{
       console.log("data passed here", data)
@@ -47,11 +48,11 @@ export function HomePage({ onAdd }: HomePageProps) {
     })
     .catch((err) => console.log(err))
 
+    // Latest Products - barcha kategoriyalardan eng yangi mahsulotlar
     product.getProducts({
       page: 1,
       order: "createdAt",
-      limit: 4,
-      productCollection: ProductCollection.DISH
+      limit: 4
     })
     .then((data)=>{
       console.log("data passed here", data)

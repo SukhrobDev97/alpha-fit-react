@@ -1,15 +1,15 @@
 import React from "react";
 import { Box, Container, Stack } from "@mui/material";
-import AspectRatio from "@mui/joy/AspectRatio";
 import Card from "@mui/joy/Card";
 import CardOverflow from "@mui/joy/CardOverflow";
 import Typography from "@mui/joy/Typography";
+import Button from "@mui/joy/Button";
 import { CssVarsProvider } from "@mui/joy/styles";
 import VisibilityIcon from "@mui/icons-material/Visibility";
-import Divider from "../../../components/divider";
 import IconButton from "@mui/joy/IconButton";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import { useHistory } from "react-router-dom";
 
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -34,81 +34,109 @@ interface NewDishesProps {
 export default function NewDishes({ onAdd }: NewDishesProps) {
   const { authMember } = useGlobals();
   const { newDishes } = useSelector(newDishesRetriever);
-      
+  const history = useHistory();
+
+  const handleCardClick = (productId: string) => {
+    history.push(`/products/${productId}`);
+  };
+
+  const handleViewDetails = (
+    event: React.MouseEvent<HTMLElement>,
+    productId: string
+  ) => {
+    event.stopPropagation();
+    history.push(`/products/${productId}`);
+  };
+
+  const handleAddToCart = (
+    event: React.MouseEvent<HTMLElement>,
+    product: Product
+  ) => {
+    event.preventDefault();
+    event.stopPropagation();
+    if (!authMember) {
+      window.alert("You are not authenticated, please log in first");
+      return;
+    }
+    onAdd({
+      _id: product._id,
+      name: product.productName,
+      price: product.productPrice,
+      image: product.productImages[0],
+      quantity: 1,
+    });
+  };
 
   return (
     <div className="new-products-frame">
       <Container>
         <Stack className="main">
-          <Box className="category-title">Our latest products</Box>
+          <Box className="category-title">
+            <span className="title-text">Our latest products</span>
+            <span className="title-accent"></span>
+          </Box>
           <Stack className="cards-frame">
             <CssVarsProvider>
               {newDishes.length !== 0 ? (
                 newDishes.map((product: Product) => {
-                const imagePath = `${serverApi}/${product.productImages[0]}`
-
-                const sizeVolume = product.productCollection === ProductCollection.VITAMINS ? 
-                  product.productVolume + "pcs" : 
-                  product.productSize + " size";
-
-                const handleAddToCart = (
-                  event: React.MouseEvent<HTMLButtonElement>
-                ) => {
-                  event.preventDefault();
-                  event.stopPropagation();
-                  if (!authMember) {
-                    window.alert("You are not authenticated, please log in first");
-                    return;
-                  }
-                  onAdd({
-                    _id: product._id,
-                    name: product.productName,
-                    price: product.productPrice,
-                    image: product.productImages[0],
-                    quantity: 1,
-                  });
-                };
+                  const imagePath = `${serverApi}/${product.productImages[0]}`;
+                  const sizeVolume = product.productCollection === ProductCollection.VITAMINS
+                    ? product.productVolume + "pcs"
+                    : product.productSize + " size";
 
                   return (
-                    <Card key={product._id} variant="outlined" className="card">
-                      <CardOverflow className="product-media">
-                        <div className="product-sale">{sizeVolume}</div>
-                        <AspectRatio ratio="1">
-                          <img
-                            src={imagePath}
-                            alt={product.productName}
-                            className="product-image"
-                          />
-                        </AspectRatio>
-                        <div className="product-hover-overlay">
+                    <Card
+                      key={product._id}
+                      className="premium-product-card"
+                      onClick={() => handleCardClick(product._id)}
+                    >
+                      <Box className="card-badge-top">New</Box>
+                      <Box className="card-image-container">
+                        <img
+                          src={imagePath}
+                          alt={product.productName}
+                          className="card-product-image"
+                        />
+                        <Box className="card-image-overlay"></Box>
+                        <Box className="card-size-badge-absolute">{sizeVolume}</Box>
+                        <Box className="card-hover-actions">
+                          <Button
+                            className="view-details-btn"
+                            onClick={(e) => handleViewDetails(e, product._id)}
+                            endDecorator={<ArrowForwardIcon />}
+                          >
+                            View details
+                          </Button>
                           <IconButton
-                            size="lg"
-                            variant="solid"
-                            className="product-cart-button"
-                            onClick={handleAddToCart}
+                            className="card-cart-btn"
+                            onClick={(e) => handleAddToCart(e, product)}
+                            title="Add to cart"
                           >
                             <ShoppingCartIcon />
                           </IconButton>
-                        </div>
-                      </CardOverflow>
-
-                      <CardOverflow variant="soft" className="product-detail">
-                        <Stack className="info">
-                          <Stack flexDirection={"row"}>
-                            <Typography className="title">
+                        </Box>
+                      </Box>
+                      <CardOverflow className="card-content-section">
+                        <Stack spacing={1.5}>
+                          <Box className="card-header-row">
+                            <Typography className="card-product-name">
                               {product.productName}
                             </Typography>
-                            <Divider width="2" height="24" bg="#d9d9d9" />
-                            <Typography className="price">${product.productPrice}</Typography>
-                          </Stack>
-                          <Stack>
-                            <Typography className="views">
-                              {product.productViews}
-                              <VisibilityIcon
-                                sx={{ fontSize: 20, marginLeft: "5px" }}
-                              />
+                            <Box className="card-views" title={`${product.productViews} views`}>
+                              <VisibilityIcon className="views-icon" />
+                              <span>{product.productViews}</span>
+                            </Box>
+                          </Box>
+                          <Box className="card-price-row">
+                            <Typography className="card-price">
+                              ${product.productPrice}
                             </Typography>
-                          </Stack>
+                          </Box>
+                          {product.productDesc && (
+                            <Typography className="card-description">
+                              {product.productDesc}
+                            </Typography>
+                          )}
                         </Stack>
                       </CardOverflow>
                     </Card>

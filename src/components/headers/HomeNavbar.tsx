@@ -46,7 +46,8 @@ export function HomeNavbar (props: HomeNavbarProps){
                     <NavLink to={"/"}>
                         <img 
                             className="brand-logo"
-                             src="/img/logoAlphaFit.png" 
+                            src="/img/logoAlphaFit.png"
+                            alt="AlphaFit Logo"
                         />
                     </NavLink>
                 </Box>
@@ -89,13 +90,17 @@ export function HomeNavbar (props: HomeNavbarProps){
                             </Button>
                         </Box>
                     ) : (
-                        <img 
+                        <Box
+                            component="img"
                             className="user-avatar"
                             src={authMember?.memberImage? `${serverApi}/${authMember?.memberImage}`
                                 : "/icons/default-user.svg"
                             }
-                            aria-haspopup = {"true"}
+                            alt={authMember?.memberNick || "User avatar"}
                             onClick={handleLogoutClick}
+                            sx={{ cursor: "pointer" }}
+                            role="button"
+                            aria-haspopup="true"
                         />
                     )}
 
@@ -105,7 +110,6 @@ export function HomeNavbar (props: HomeNavbarProps){
 	id="account-menu"
     open={Boolean(anchorEl)}
     onClose={handleCloseLogout}
-    onClick={handleLogoutClick}
 	PaperProps={{
 		elevation: 0,
 		sx: {
@@ -151,6 +155,11 @@ export function HomeNavbar (props: HomeNavbarProps){
           <Container className="navbar-container">
             <Stack className="header-frame">
               <Stack className="detail">
+                <Stack className="hero-badges" direction="row" spacing={1.5}>
+                  <Box className="hero-badge">🥗 Healthy Meals</Box>
+                  <Box className="hero-badge">💪 Fitness Programs</Box>
+                  <Box className="hero-badge">🚚 24/7 Delivery</Box>
+                </Stack>
                 <Box className="head-main-text">AlphaFit — Where Strength Begins</Box>
                 <Box className="wel-text">Power Your Healthy Life Journey</Box>
                 <Box className="service-text">24 hours service</Box>
@@ -166,8 +175,14 @@ export function HomeNavbar (props: HomeNavbarProps){
                 ): null}
                 </Box>
               </Stack>
-              <Stack className="logo-frame">
-                <div className="logo-img"></div>
+              <Stack className="product-visual">
+                <Box className="heroImageWrapper">
+                  <img 
+                    src="/img/grocery-shopping-with-eco-bag-white-wall-zero-waste-plastic-free-concept-flat-lay-copy-space.png" 
+                    alt="Healthy Grocery Shopping" 
+                    className="hero-product-image"
+                  />
+                </Box>
               </Stack>
             </Stack>
           </Container>

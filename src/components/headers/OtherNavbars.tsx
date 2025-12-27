@@ -43,7 +43,8 @@ export function OtherNavbars (props: OtherNavbarsProps){
                     <NavLink to={"/"}>
                         <img 
                             className="brand-logo"
-                             src="/img/logoAlphaFit.png" 
+                            src="/img/logoAlphaFit.png"
+                            alt="AlphaFit Logo"
                         />
                     </NavLink>
                 </Box>
@@ -103,7 +104,6 @@ export function OtherNavbars (props: OtherNavbarsProps){
 	id="account-menu"
     open={Boolean(anchorEl)}
     onClose={handleCloseLogout}
-    onClick={handleLogoutClick}
 	PaperProps={{
 		elevation: 0,
 		sx: {
