@@ -1,5 +1,11 @@
 #! /bin/bash
+set -e
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
+nvm use 18
+export PATH="$HOME/.npm-global/bin:$PATH"
 #Production
 git reset --hard
 git checkout main
